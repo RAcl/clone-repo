@@ -32,7 +32,7 @@ clone() {
         cd ..
 }
 
-for repo in $(gh repos | grep ${ORG} | awk '{print $2}'); do
+for repo in $(gh repo list ${ORG} -L 1000 | awk '{print $1}'); do
         echo "-----------------------------------------------------------"
         echo $repo
         echo "-----------------------------------------------------------"
